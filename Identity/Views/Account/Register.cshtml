@@ -1,0 +1,39 @@
+﻿@model WebApi.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+@using (Html.BeginForm("Register1", "Account", FormMethod.Post, new{@class="", role="form"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <p>
+        @Html.LabelFor(m=>m.UserName)
+        @Html.TextBoxFor(m=>m.UserName)
+    </p>
+
+    <p>
+        @Html.LabelFor(m=>m.Email)
+        @Html.TextBoxFor(m=>m.Email)
+    </p>
+
+    <p>
+        @Html.LabelFor(m=>m.Age)
+        @Html.TextBoxFor(m=>m.Age)
+    </p>
+
+    <p>
+        @Html.LabelFor(m=>m.Password)
+        @Html.TextBoxFor(m=>m.Password)
+    </p>
+    
+    <p>
+        @Html.LabelFor(m=>m.ConfirmPassword)
+        @Html.TextBoxFor(m=>m.ConfirmPassword)
+    </p>
+    <input type="submit" value="Register1">
+
+}
+
